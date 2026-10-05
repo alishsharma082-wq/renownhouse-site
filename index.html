@@ -1,0 +1,383 @@
+<!--
+  ================= EDIT THESE FIRST =================
+  1. BRAND: search "Scrollstop" and replace with your agency name
+  2. WHATSAPP: change WA_NUMBER in the script (91 + 10 digits)
+  3. EMAIL: search "hello@scrollstop.in"
+  4. VIDEOS: edit the VIDEOS list in the script (add .mp4 links)
+  ====================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#f5f5f7;--mut:#a1a1a6;--soft:#6e6e73;--line:#2c2c2e;
+  --bg:#000;--bg2:#0b0b0d;--tile:#161618;--tile2:#1d1d1f;
+  --saf:#ff8a1f;--mag:#ff2e7e;--vio:#7b5cff;
+  --grad:linear-gradient(100deg,var(--saf),var(--mag) 52%,var(--vio));
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,"Helvetica Neue",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.011em}
+a{color:inherit;text-decoration:none}
+.w{max-width:1080px;margin:0 auto;padding:0 22px}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05}
+.eyebrow{font-size:17px;font-weight:600;margin-bottom:12px;display:block;color:var(--mut)}
+.h2{font-size:clamp(38px,6vw,64px);margin-bottom:18px}
+.lead{font-size:clamp(19px,2.2vw,22px);color:var(--mut);line-height:1.45;max-width:640px;font-weight:400}
+.center{text-align:center}.center .lead{margin:0 auto}
+section{padding:140px 0}
+.alt{background:var(--bg2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:999px;font-size:17px;font-weight:500;border:none;cursor:pointer;transition:all .3s var(--ease);font-family:inherit}
+.btn-d{background:var(--ink);color:#000}
+.btn-d:hover{background:#fff;transform:scale(1.02);box-shadow:0 0 40px -6px rgba(255,46,126,.5)}
+.lnk{color:#ff5c98;font-size:17px;font-weight:500}
+.lnk:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,.6);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:52px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:600;font-size:18px;letter-spacing:-.03em;display:flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px rgba(255,46,126,.6)}
+.nl{display:flex;gap:32px;font-size:13px;color:var(--mut)}
+.nl a:hover{color:var(--ink)}
+.nav .btn{padding:7px 15px;font-size:13px}
+@media(max-width:760px){.nl{display:none}}
+
+/* HERO */
+.hero{padding:170px 0 0;text-align:center;position:relative;overflow:hidden}
+.hero .eyebrow{color:var(--soft);font-weight:500;font-size:15px;letter-spacing:.02em}
+.hero h1{font-size:clamp(48px,8.4vw,96px);margin:0 auto 24px;max-width:960px}
+.hero .lead{margin:0 auto 34px}
+.ctas{display:flex;gap:28px;justify-content:center;align-items:center;flex-wrap:wrap}
+.stage{position:relative;height:620px;margin-top:80px;display:flex;justify-content:center;align-items:flex-start;gap:28px}
+.glow{position:absolute;width:760px;height:440px;top:110px;left:50%;transform:translateX(-50%);background:var(--grad);filter:blur(130px);opacity:.35;border-radius:50%;z-index:0}
+.ph{position:relative;z-index:1;width:250px;aspect-ratio:9/19;border-radius:44px;background:#0a0a0a;padding:9px;box-shadow:0 50px 100px -30px rgba(0,0,0,.9),inset 0 0 0 1.5px #3a3a3c;transition:transform .2s linear}
+.ph.c{width:290px;margin-top:-30px}
+.ph .sc{width:100%;height:100%;border-radius:36px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff}
+.ph .sc:before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:22px;border-radius:20px;background:#000}
+.ph p{font-size:11px;opacity:.75;margin-top:6px}
+.ph strong{font-size:22px;font-weight:600;line-height:1.1;letter-spacing:-.03em}
+.prod{position:absolute;left:50%;top:26%;transform:translateX(-50%);width:76px;height:150px;border-radius:18px 18px 12px 12px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.5));box-shadow:0 30px 60px rgba(0,0,0,.5);animation:bob 5s var(--ease) infinite}
+@keyframes bob{50%{transform:translateX(-50%) translateY(-10px)}}
+@media(max-width:820px){.ph:not(.c){display:none}.stage{height:600px}}
+.hero:after{content:'';position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(transparent,var(--bg));z-index:2;pointer-events:none}
+
+.cats{padding:40px 0 0;text-align:center;color:var(--soft);font-size:15px}
+.cats span{margin:0 14px;white-space:nowrap;display:inline-block;padding:6px 0}
+
+/* STATEMENT */
+.stmt{padding:180px 0}
+.stmt p{font-size:clamp(32px,5vw,56px);font-weight:600;letter-spacing:-.035em;line-height:1.15;max-width:920px}
+.stmt .wd{opacity:.14;transition:opacity .25s}
+.stmt .wd.on{opacity:1}
+
+/* WORK */
+.seg{display:inline-flex;background:var(--tile2);border-radius:999px;padding:4px;margin:38px 0 56px;border:1px solid var(--line)}
+.seg button{background:none;border:none;color:var(--mut);padding:9px 20px;border-radius:999px;font-size:14px;cursor:pointer;font-family:inherit;transition:all .3s var(--ease)}
+.seg button.on{background:var(--ink);color:#000}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+@media(max-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+.vc{position:relative;aspect-ratio:9/16;border-radius:28px;overflow:hidden;cursor:pointer;background:var(--tile2);border:1px solid rgba(255,255,255,.06);transition:transform .5s var(--ease),box-shadow .5s var(--ease);animation:in .6s var(--ease) both}
+.vc:hover{transform:scale(1.025);box-shadow:0 30px 60px -20px rgba(255,46,126,.35)}
+@keyframes in{from{opacity:0;transform:translateY(16px)}}
+.vc video,.vc .pl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vc .pl{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:13px}
+.vc .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.8));display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.vc .k{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:4px}
+.vc h4{font-size:16px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.vc .pb{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.vc:hover .pb{opacity:1}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:70px}
+.t{background:var(--tile);border:1px solid rgba(255,255,255,.06);border-radius:30px;padding:40px;position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;transition:border-color .4s}
+.t:hover{border-color:rgba(255,255,255,.14)}
+.t h3{font-size:28px;margin-bottom:10px}
+.t p{color:var(--mut);font-size:17px;line-height:1.45;max-width:400px;position:relative;z-index:1}
+.t .ey{font-size:14px;font-weight:600;margin-bottom:10px;color:var(--soft)}
+.s4{grid-column:span 4}.s2{grid-column:span 2}.s3{grid-column:span 3}
+@media(max-width:860px){.s4,.s2,.s3{grid-column:span 6}}
+.t.big{min-height:420px}
+.t .art{position:absolute;right:-40px;bottom:-60px;width:320px;height:320px;border-radius:50%;background:var(--grad);filter:blur(70px);opacity:.45}
+.t .mini{margin-top:auto;display:flex;gap:10px}
+.t .mini i{flex:1;aspect-ratio:9/16;border-radius:14px;background:linear-gradient(160deg,#2c2c2e,#3a3a3c);max-width:90px;position:relative;z-index:1}
+.t .mini i:nth-child(2){background:var(--grad)}
+.addon{display:inline-block;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut);margin-bottom:14px;align-self:flex-start}
+
+/* NUMBERS */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:70px}
+@media(max-width:760px){.nums{grid-template-columns:repeat(2,1fr)}}
+.num b{display:block;font-size:clamp(44px,6vw,64px);font-weight:600;letter-spacing:-.04em}
+.num span{color:var(--mut);font-size:15px}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:70px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+.stp .n{font-size:14px;color:var(--soft);font-weight:500;margin-bottom:16px;display:block;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.stp h3{font-size:21px;margin-bottom:8px;letter-spacing:-.02em}
+.stp p{color:var(--mut);font-size:15px;line-height:1.5}
+
+/* TRUST */
+.chk{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px;text-align:left}
+@media(max-width:860px){.chk{grid-template-columns:1fr 1fr}}
+.chk div{padding-top:20px;border-top:1px solid var(--line)}
+.chk b{display:block;font-size:17px;font-weight:600;margin-bottom:6px;letter-spacing:-.02em}
+.chk span{color:var(--mut);font-size:15px;line-height:1.5}
+
+/* FAQ */
+.faq{max-width:760px;margin:60px auto 0;text-align:left}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;background:none;border:none;text-align:left;padding:26px 0;font-size:19px;font-weight:500;letter-spacing:-.02em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--ink);font-family:inherit}
+.q button:after{content:'';width:10px;height:10px;border-right:1.5px solid var(--mut);border-bottom:1.5px solid var(--mut);transform:rotate(45deg);transition:transform .35s var(--ease);margin-right:6px}
+.q.op button:after{transform:rotate(-135deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.q.op .a{max-height:220px}
+.q .a p{padding-bottom:26px;color:var(--mut);font-size:17px;line-height:1.55}
+
+/* CTA */
+.cta{position:relative;overflow:hidden}
+.cta .glow{top:auto;bottom:-260px;opacity:.25}
+.cta .w{position:relative;z-index:1}
+.cta h2{font-size:clamp(44px,7vw,80px);margin-bottom:22px}
+.get{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.get span{font-size:14px;color:var(--mut);padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03)}
+.form{max-width:560px;margin:44px auto 0;display:grid;gap:12px;text-align:left}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.form input,.form select{width:100%;padding:17px 18px;border-radius:14px;border:1px solid #3a3a3c;font-size:17px;font-family:inherit;background:var(--tile);color:var(--ink);transition:border .2s,box-shadow .2s;-webkit-appearance:none}
+.form input::placeholder{color:var(--soft)}
+.form select{color:var(--mut)}
+.form input:focus,.form select:focus{outline:none;border-color:var(--mag);box-shadow:0 0 0 4px rgba(255,46,126,.15)}
+.form .btn{margin-top:8px;padding:17px}
+.note{font-size:13px;color:var(--soft);text-align:center;margin-top:16px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:12px;color:var(--soft)}
+.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* MODAL */
+.mod{position:fixed;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.mod.on{opacity:1;pointer-events:auto}
+.mod video{max-height:88vh;max-width:100%;aspect-ratio:9/16;border-radius:28px;background:#000}
+.mod .x{position:absolute;top:22px;right:22px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:none;color:#fff;font-size:20px;cursor:pointer}
+.mod .em{background:var(--tile2);color:var(--mut);border-radius:28px;padding:44px;max-width:360px;text-align:center}
+.mod .em h3{color:var(--ink);font-size:22px;margin-bottom:10px}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+</style>
+
+<nav><div class="w nav">
+  <a href="#top" class="logo"><span class="dot"></span>Scrollstop</a>
+  <div class="nl"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#faq">FAQ</a></div>
+  <a href="#contact" class="btn btn-d">Book a call</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="w">
+    <span class="eyebrow rv">AI-powered performance creative</span>
+    <h1 class="rv d1">Ads that perform.<br><span class="g">Made for Indian D2C.</span></h1>
+    <p class="lead rv d2">Scroll-stopping video and static ads, produced with AI and directed by people who understand what makes Indian customers buy.</p>
+    <div class="ctas rv d3">
+      <a href="#contact" class="btn btn-d">Book a strategy call</a>
+      <a href="#work" class="lnk">See the work ›</a>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="glow"></div>
+    <div class="ph" data-sp="0.06"><div class="sc" style="background:linear-gradient(170deg,#2c2c2e,#5a2a3a)"><div class="prod" style="width:60px;height:120px"></div><strong>Your skin,<br>but better.</strong><p>Sponsored</p></div></div>
+    <div class="ph c" data-sp="-0.04"><div class="sc" style="background:linear-gradient(170deg,#ff8a1f,#ff2e7e 55%,#7b5cff)"><div class="prod"></div><strong>Glow in 7 days.<br>No harsh chemicals.</strong><p>Sponsored · Shop now</p></div></div>
+    <div class="ph" data-sp="0.06"><div class="sc" style="background:linear-gradient(170deg,#1d1d1f,#3a2f5a)"><div class="prod" style="width:60px;height:120px"></div><strong>Made to be<br>noticed.</strong><p>Sponsored</p></div></div>
+  </div>
+</header>
+
+<div class="cats rv"><span>Skincare</span><span>Beauty</span><span>Fashion</span><span>Jewellery</span><span>Food & Beverage</span><span>Wellness</span><span>Home</span></div>
+
+<section class="stmt"><div class="w">
+  <p id="stmt">Meta rewards fresh creative. Most brands can't keep up with the demand. Shoots take weeks. Agencies take months. We deliver new, tested ads every single week.</p>
+</div></section>
+
+<section class="alt center" id="work"><div class="w">
+  <span class="eyebrow rv">Showreel</span>
+  <h2 class="h2 rv">The work speaks.</h2>
+  <p class="lead rv">A selection of ads built to stop the scroll and drive the sale.</p>
+  <div class="seg rv" id="seg"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="services"><div class="w">
+  <div class="center">
+    <span class="eyebrow rv">Services</span>
+    <h2 class="h2 rv">One team. Every format.</h2>
+    <p class="lead rv">Everything your ad account needs to keep winning, under one roof.</p>
+  </div>
+  <div class="bento">
+    <div class="t big s4 rv"><span class="ey g">Most requested</span><h3>AI UGC videos</h3><p>Presenter-style talking-head ads with relatable faces, scripted with multiple hooks so you find winners faster.</p><div class="art"></div><div class="mini"><i></i><i></i><i></i></div></div>
+    <div class="t s2 rv d1"><span class="ey">Motion</span><h3>Product films</h3><p>Textures, splashes and light that make your product impossible to scroll past.</p></div>
+    <div class="t s3 rv"><span class="ey">Static</span><h3>Image & carousel ads</h3><p>High-volume static creative for Meta and Google, built around offers, benefits and proof.</p></div>
+    <div class="t s3 rv d1"><span class="ey">Strategy</span><h3>Creative strategy</h3><p>We study your account and competitors, then plan exactly which angles to test each month.</p></div>
+    <div class="t s4 rv"><span class="ey">Seasonal</span><h3>Festive campaigns</h3><p>Diwali, wedding season and sale-day creative, ready before the window opens, not after.</p></div>
+    <div class="t s2 rv d1"><span class="addon">Add-on</span><h3>Regional versions</h3><p>Scale a winning ad into regional languages when you're ready.</p></div>
+  </div>
+</div></section>
+
+<section class="alt center"><div class="w">
+  <h2 class="h2 rv">Built for speed.<br><span class="g">Obsessed with results.</span></h2>
+  <div class="nums">
+    <div class="num rv"><b>48h</b><span>Average delivery</span></div>
+    <div class="num rv d1"><b>20+</b><span>Ads every month</span></div>
+    <div class="num rv d2"><b>0</b><span>Studio shoots needed</span></div>
+    <div class="num rv d3"><b>1</b><span>Team for everything</span></div>
+  </div>
+</div></section>
+
+<section id="process"><div class="w">
+  <span class="eyebrow rv">Process</span>
+  <h2 class="h2 rv">From brief to live ads<br>in a week.</h2>
+  <div class="steps">
+    <div class="stp rv"><span class="n">01</span><h3>Strategy call</h3><p>We learn your product, customer, past winners and what hasn't worked.</p></div>
+    <div class="stp rv d1"><span class="n">02</span><h3>Angles & scripts</h3><p>Competitor research turns into hooks and scripts for your approval.</p></div>
+    <div class="stp rv d2"><span class="n">03</span><h3>Production</h3><p>Every ad is produced with AI and finished by hand. Nothing raw ships.</p></div>
+    <div class="stp rv d3"><span class="n">04</span><h3>Test & iterate</h3><p>We review your results and double down on what converts.</p></div>
+  </div>
+</div></section>
+
+<section class="alt center"><div class="w">
+  <span class="eyebrow rv">Responsible by design</span>
+  <h2 class="h2 rv">AI ads that keep your<br>brand safe.</h2>
+  <p class="lead rv">We follow India's AI advertising rules by default, so your legal team can relax.</p>
+  <div class="chk">
+    <div class="rv"><b>Clear labelling</b><span>AI disclosures added wherever required.</span></div>
+    <div class="rv d1"><b>No fake endorsements</b><span>No fabricated testimonials or "experts."</span></div>
+    <div class="rv d2"><b>Consent first</b><span>No cloned faces or voices without permission.</span></div>
+    <div class="rv d3"><b>Honest claims</b><span>Results shown realistically, never exaggerated.</span></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="w center">
+  <h2 class="h2 rv">Questions.</h2>
+  <div class="faq" id="faqs"></div>
+</div></section>
+
+<section class="center cta alt" id="contact"><div class="glow"></div><div class="w">
+  <h2 class="rv">Your next winning ad<br><span class="g">starts with a call.</span></h2>
+  <p class="lead rv">A free 30-minute call. We'll come prepared with ideas for your brand.</p>
+  <div class="get rv"><span>Review of your current ads</span><span>Competitor breakdown</span><span>3 angles to test</span></div>
+  <form class="form rv" id="form">
+    <div class="row"><input id="fn" placeholder="Name" required><input id="fb" placeholder="Brand" required></div>
+    <input id="fw" placeholder="Website or Instagram">
+    <select id="fs">
+      <option value="">Monthly ad spend</option>
+      <option>Under ₹2 lakh</option>
+      <option>₹2–5 lakh</option>
+      <option>₹5–20 lakh</option>
+      <option>₹20 lakh+</option>
+    </select>
+    <button class="btn btn-d">Book my strategy call</button>
+    <p class="note">Opens WhatsApp with your details. Or email <a href="mailto:hello@scrollstop.in" style="color:var(--ink)">hello@scrollstop.in</a></p>
+  </form>
+</div></section>
+
+<footer><div class="w ft">
+  <span>© 2026 Scrollstop. AI performance creative for Indian D2C brands.</span>
+  <span>Made in India</span>
+</div></footer>
+
+<div class="mod" id="mod"><button class="x" id="mx">✕</button><div id="mb"></div></div>
+
+<script>
+/* ====== SETTINGS ====== */
+const WA_NUMBER = "919999999999";
+
+/* ====== VIDEOS ======
+   c: ugc | product | static
+   src: direct .mp4 link ("" shows placeholder)
+   poster: optional thumbnail */
+const VIDEOS = [
+  {t:"Vitamin C serum: morning routine", b:"Skincare", c:"ugc", src:"", poster:""},
+  {t:"Cold-pressed oil: splash film", b:"Kitchen", c:"product", src:"", poster:""},
+  {t:"Silver jhumkas: festive carousel", b:"Jewellery", c:"static", src:"", poster:""},
+  {t:"Hair oil: problem to solution", b:"Haircare", c:"ugc", src:"", poster:""},
+  {t:"Perfume: 15-second reel", b:"Fragrance", c:"product", src:"", poster:""},
+  {t:"Protein bar: three hooks", b:"Snacks", c:"ugc", src:"", poster:""},
+  {t:"Diwali sale: offer static", b:"Home decor", c:"static", src:"", poster:""},
+  {t:"Sneaker drop: product film", b:"Footwear", c:"product", src:"", poster:""}
+];
+
+const CATS = {all:"All",ugc:"AI UGC",product:"Product films",static:"Static"};
+const TONES = ["#1d1d1f,#4a2232","#161618,#2f2650","#1d1d1f,#4a3018","#161618,#4a1a32","#1d1d1f,#262f4a","#161618,#3a2650","#1d1d1f,#4a2626","#161618,#2c2c2e"];
+
+const grid = document.getElementById("grid");
+function render(cat){
+  grid.innerHTML = "";
+  VIDEOS.forEach((v,i)=>{
+    if(cat!=="all" && v.c!==cat) return;
+    const d = document.createElement("div");
+    d.className="vc"; d.style.animationDelay=(i*.05)+"s";
+    d.innerHTML = (v.src
+      ? `<video src="${v.src}" ${v.poster?`poster="${v.poster}"`:""} muted loop playsinline preload="metadata"></video>`
+      : `<div class="pl" style="background:linear-gradient(165deg,${TONES[i%TONES.length]})">Your video here</div>`)
+      + `<div class="pb"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M7 4v16l13-8z"/></svg></div>
+         <div class="ov"><span class="k">${CATS[v.c]} · ${v.b}</span><h4>${v.t}</h4></div>`;
+    const vid = d.querySelector("video");
+    if(vid){d.onmouseenter=()=>vid.play().catch(()=>{});d.onmouseleave=()=>{vid.pause();vid.currentTime=0;};}
+    d.onclick=()=>openM(v);
+    grid.appendChild(d);
+  });
+}
+const seg = document.getElementById("seg");
+Object.entries(CATS).forEach(([k,l],i)=>{
+  const b=document.createElement("button");
+  b.textContent=l; if(!i) b.className="on";
+  b.onclick=()=>{seg.querySelectorAll("button").forEach(x=>x.className="");b.className="on";render(k);};
+  seg.appendChild(b);
+});
+render("all");
+
+const mod=document.getElementById("mod"), mb=document.getElementById("mb");
+function openM(v){
+  mb.innerHTML = v.src ? `<video src="${v.src}" controls autoplay playsinline></video>`
+    : `<div class="em"><h3>${v.t}</h3><p>Add this video's link in the VIDEOS list to play it here.</p></div>`;
+  mod.classList.add("on");
+}
+function closeM(){mod.classList.remove("on");setTimeout(()=>mb.innerHTML="",350);}
+document.getElementById("mx").onclick=closeM;
+mod.onclick=e=>{if(e.target===mod)closeM();};
+addEventListener("keydown",e=>{if(e.key==="Escape")closeM();});
+
+const FAQ=[
+  ["Do AI ads actually perform?","Yes, when they're scripted well and finished properly. Raw AI output looks generic, so every ad is directed and edited by a person, and we test multiple hooks to find what works."],
+  ["What do you need from us?","Product photos, your website, and a 30-minute call. No shoots, no samples to courier."],
+  ["How does pricing work?","Every brand's needs are different, so we share a tailored proposal after the strategy call, based on the volume and formats you need."],
+  ["Are AI ads allowed in India?","Yes. India's rules require clear labelling in some cases and ban things like fake testimonials or deepfakes. Every ad we make follows them."],
+  ["Do you run the ads too?","We focus on creative. You or your performance agency run the ads, and we use the results to plan the next batch."]
+];
+document.getElementById("faqs").innerHTML=FAQ.map(([q,a])=>`<div class="q"><button>${q}</button><div class="a"><p>${a}</p></div></div>`).join("");
+document.querySelectorAll(".q button").forEach(b=>b.onclick=()=>b.parentElement.classList.toggle("op"));
+
+const st=document.getElementById("stmt");
+st.innerHTML=st.textContent.split(" ").map(w=>`<span class="wd">${w}</span>`).join(" ");
+const wds=st.querySelectorAll(".wd");
+const phones=document.querySelectorAll(".ph");
+function onScroll(){
+  const r=st.getBoundingClientRect(), vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.4)));
+  const n=Math.round(p*wds.length);
+  wds.forEach((w,i)=>w.classList.toggle("on",i<n));
+  phones.forEach(ph=>{ph.style.transform=`translateY(${scrollY*parseFloat(ph.dataset.sp)}px)`;});
+}
+addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+document.getElementById("form").onsubmit=e=>{
+  e.preventDefault();
+  const msg=`Hi! I'd like to book a strategy call.\nName: ${fn.value}\nBrand: ${fb.value}\nLink: ${fw.value||"-"}\nMonthly ad spend: ${fs.value||"-"}`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+};
+</script>
